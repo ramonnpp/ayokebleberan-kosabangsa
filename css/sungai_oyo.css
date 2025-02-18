@@ -1,0 +1,147 @@
+
+h2 {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+h4 {
+  color: #333;
+  font-weight: 600;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+.content p {
+text-align: justify;
+}
+.services{
+    justify-content: center;
+    align-items: center;
+  }
+.section {
+  padding: 0%;
+}
+
+.image-slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.image-slider .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%); /* Mulai di slide pertama */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Navigasi manual */
+.image-slider button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+}
+
+.image-slider .prev {
+    left: 10px;
+}
+
+.image-slider .next {
+    right: 10px;
+}
+
+.image-slider button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .image-slider {
+        height: 200px;
+    }
+
+    .image-slider button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-slider {
+        height: 150px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .image-slider {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .image-slider button {
+        font-size: 14px;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p, h4 {
+        font-size: 16px;
+    }
+
+    .services.section {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 20px;
+    }
+
+    p, h4 {
+        font-size: 14px;
+    }
+
+    .content {
+        padding-left: 10px;
+    }
+}

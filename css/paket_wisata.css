@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container-ht {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.ticket-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ticket-item {
+    position: relative; /* Untuk positioning pseudo-elemen */
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    flex: 1 1 calc(33.333% - 20px); /* Responsive untuk desktop */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Transisi untuk efek hover */
+}
+
+.ticket-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(9, 132, 227, 0.1); /* Warna latar belakang saat hover */
+    border-radius: 5px;
+    opacity: 0; /* Mulai dengan transparan */
+    transition: opacity 0.3s; /* Transisi untuk efek hover */
+    z-index: 0; /* Di belakang konten */
+}
+
+.ticket-item:hover {
+    transform: translateY(-5px); /* Mengangkat kartu saat hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan lebih kuat saat hover */
+}
+
+.ticket-item:hover::before {
+    opacity: 1; /* Menampilkan latar belakang saat hover */
+}
+
+.ticket-item h2 {
+    margin: 0 0 10px;
+    position: relative; /* Untuk memastikan teks tetap di atas pseudo-elemen */
+    z-index: 1; /* Di atas pseudo-elemen */
+}
+
+.buy-button {
+    background-color: #0984e3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative; /* Untuk positioning efek hover */
+    z-index: 1; /* Di atas pseudo-elemen */
+    transition: background-color 0.3s; /* Transisi untuk tombol */
+}
+
+.buy-button:hover {
+    background-color: #39ace7;
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    .ticket-item {
+        flex: 1 1 calc(50% - 20px); /* 2 kolom untuk tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-item {
+        flex: 1 1 100%; /* 1 kolom untuk mobile */
+    }
+}
+.popup {
+    display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.popup-content {
+    position: relative;
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

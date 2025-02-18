@@ -1,0 +1,357 @@
+.visitor-stats {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.intro {
+  padding: 60px 0;
+  /* background: linear-gradient(to bottom, #ffffff, #f0f4f8); */
+  background-size: cover;
+  border-radius: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h100v20H0V0zm0 0v14c0 3.314 2.686 6 6 6h88c3.314 0 6-2.686 6-6V0H0z' fill='%2310cb8d' fill-opacity='0.07'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.intro-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.intro-text {
+  flex: 1;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to top, #ffffff, #f5f7fa);
+}
+
+.intro-gallery {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-item:first-child {
+  grid-column: 1 / -1;
+  height: 250px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(52, 152, 219, 0.3); /* Light border for depth */
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: #3498db;
+  border-radius: 2px;
+}
+
+.intro-description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #4b4b4b;
+  margin-bottom: 20px;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+  flex: 0 0 120px;
+  background: #f0f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #3498db;
+}
+
+.stat-label {
+  font-size: 15px;
+  color: #7f8c8d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+  }
+
+  .intro-text,
+  .intro-gallery {
+    width: 100%;
+  }
+
+  .gallery-item:first-child {
+    height: 200px;
+  }
+
+  .gallery-item {
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .intro-description {
+    font-size: 16px;
+  }
+
+  .stat-item {
+    flex: 0 0 100px;
+  }
+}
+
+/* Statistik Admin */
+
+.admin-stats-form h4 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  color: #333;
+}
+.stats-section {
+  padding: 60px 0;
+  background: #f9f9f9;
+}
+
+.stats-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+}
+
+.stats-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stats-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.stats-btn {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.stats-btn:hover {
+  background: #0056b3;
+}
+
+.stats-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.stats-label {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* testimonial */
+.testimonials {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.testimonial-card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card .card-body {
+  padding: 20px;
+}
+
+.testimonial-card .card-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.testimonial-card .card-text {
+  font-style: italic;
+  color: #666;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.testimonials {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+}
+
+.testimonial-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.testimonial-footer {
+  font-size: 14px;
+  color: gray;
+}
+
+.testimonial-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-form input,
+.testimonial-form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.testimonial-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.testimonial-form button:hover {
+  background-color: #0056b3;
+}
